@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ labels:
+  app: new-backend-app
+spec:
+ replicas: 2
+ selector:
+  matchlabels:
+   app: new-backend-app
+ template:
+  metadata:
+   labels:
+    app: new-backend-app
+  spec:
+   containers:
+    - name: new-image
+      image: new
+      ports:
+       - containerPort: 8080
+   
+   
